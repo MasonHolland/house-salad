@@ -11,10 +11,10 @@ require 'rails_helper'
 RSpec.feature "searching for house members from a state" do
   it "returns a list of relevant candidates" do
     visit '/'
-    select 'Colorado', :from => 'search'
-    click_on "Locate Members from the House"
+    select 'Colorado', :from => 'state'
+    click_on "Locate Members of the House"
 
     expect(current_path).to eq("/search?state=CO")
     expect(page).to have_content("7 Results")
-  end
+r  end
 end
