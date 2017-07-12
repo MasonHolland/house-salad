@@ -6,6 +6,6 @@ class SearchController < ApplicationController
     response = conn.get '/search'
     @parsed = JSON.parse(conn.get.body)
 
-    # binding.pry
+    binding.pry
   end
 end

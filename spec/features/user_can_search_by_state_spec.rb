@@ -13,7 +13,7 @@ RSpec.feature "searching for house members from a state" do
     visit '/'
     select 'Colorado', :from => 'state'
     click_on "Locate Members of the House"
-    
+    save_and_open_page
     expect(current_path).to eq("/search")
     expect(page).to have_content("7 Results")
   end

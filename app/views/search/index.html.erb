@@ -1,1 +1,15 @@
-<%= @parsed["results"].count %> Results
+<%= @parsed["results"].count %> Results <br>
+
+
+people.sort_by { |name, age| age }
+<% @parsed["results"].sort_by { |name, role, party, district, seniority| seniority } %>
+<% each do |leech| %>
+<ul>
+  <li>
+    Name: <%= leech["name"] %><br>
+    Role: <%= leech["role"] %><br>
+    Part: <%= leech["party"] %><br>
+    District: <%= leech["district"] %><br>
+  </li>
+</ul>
+<% end %>
