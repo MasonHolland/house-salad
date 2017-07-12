@@ -5,6 +5,7 @@ class SearchController < ApplicationController
     conn.headers = conn.headers.merge(key)
     response = conn.get '/search'
     parsed = JSON.parse(conn.get.body)
-    @sorted = parsed["results"].sort_by { |peep| peep["seniority"].to_i }
+    sorted = parsed["results"].sort_by { |peep| peep["seniority"].to_i }
+    @sorted = sorted.reverse
   end
 end
